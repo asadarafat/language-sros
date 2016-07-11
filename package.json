@@ -1,6 +1,10 @@
 {
   "name": "language-sros",
+<<<<<<< HEAD
   "version": "0.2.1",
+=======
+  "version": "0.1.0",
+>>>>>>> 314298b037f18615e7c501b6960fa7fb80d71492
   "description": "SROS language support in Atom",
   "engines": {
     "atom": "*"

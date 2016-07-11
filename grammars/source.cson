@@ -16,9 +16,12 @@
     'include': '#ip_address'
   }
   {
+<<<<<<< HEAD
     'include': '#ipv6_address'
   }
   {
+=======
+>>>>>>> 314298b037f18615e7c501b6960fa7fb80d71492
     'include': '#description'
   }
   {
@@ -31,7 +34,11 @@
     'include': '#echo'
   }
   {
+<<<<<<< HEAD
     'include': '#test-tab'
+=======
+    'include': '#system'
+>>>>>>> 314298b037f18615e7c501b6960fa7fb80d71492
   }
   {
     'include': '#variable'
@@ -61,9 +68,12 @@
   {
     'include': '#port-leaf'
   }
+<<<<<<< HEAD
   {
     'include': '#port-id'
   }
+=======
+>>>>>>> 314298b037f18615e7c501b6960fa7fb80d71492
 #log Stanza
   {
     'include': '#log-bud'
@@ -91,6 +101,7 @@
 ##
 ##
 ]
+<<<<<<< HEAD
 
 'repository':
   'test-tab':
@@ -101,6 +112,9 @@
         'comment': 'config stanza 1'
       }
     ]
+=======
+'repository':
+>>>>>>> 314298b037f18615e7c501b6960fa7fb80d71492
   'stanza-1':
     'patterns': [
       {
@@ -112,7 +126,11 @@
   'stanza-2':
     'patterns': [
       {
+<<<<<<< HEAD
         'match': '\\s(thresholds|ftp-server|serial|rs232|interface|ospf|isis|bgp|group|autonomous-system|policy-options|mpls|lsp|path|ldp|rsvp|sdp|epipe|vpls|vprn|ies|cpipe|cesopsn)\\s'
+=======
+        'match': '(thresholds|ftp-server|card|mda|serial|rs232|interface|ospf|isis|bgp|group|autonomous-system|policy-options|mpls|lsp|path|ldp|rsvp|sdp|epipe|vpls|vprn|ies|cpipe|cesopsn)\\s'
+>>>>>>> 314298b037f18615e7c501b6960fa7fb80d71492
         'name': 'keyword.numeric.sros'
         'comment': 'config stanza 2'
       }
@@ -132,6 +150,7 @@
         'name': 'storage.type.function.sros'
       }
     ]
+<<<<<<< HEAD
   'ipv6_address':
     'patterns': [
       {
@@ -143,6 +162,8 @@
         'name': 'storage.type.function.sros'
       }
     ]
+=======
+>>>>>>> 314298b037f18615e7c501b6960fa7fb80d71492
   'description':
     'patterns': [
       {
@@ -176,7 +197,18 @@
       }
     ]
 
+<<<<<<< HEAD
 
+=======
+  'system':
+    'patterns': [
+      {
+        'match': '\^s{0,2}(router|System|system)\\s'
+        'name':  'storage.type.function.sros'
+        'comment': 'config stanza 1'
+      }
+    ]
+>>>>>>> 314298b037f18615e7c501b6960fa7fb80d71492
   'other':
     'patterns': [
       {
@@ -188,7 +220,11 @@
   'system-bud':
     'patterns': [
       {
+<<<<<<< HEAD
         'match': '\\s(name|dns|snmp|time)\\s'
+=======
+        'match': '\\b(name|dns|snmp|time)\\s'
+>>>>>>> 314298b037f18615e7c501b6960fa7fb80d71492
         'name': 'keyword.numeric.sros'
         'comment': 'system-bud'
       }
@@ -196,7 +232,11 @@
   'system-leaf':
     'patterns': [
       {
+<<<<<<< HEAD
         'match': '\\s(sntp|zone|rmon)\\s'
+=======
+        'match': '\\b(sntp|zone|rmon)\\s'
+>>>>>>> 314298b037f18615e7c501b6960fa7fb80d71492
         'name':  'storage.type.function.sros'
         'comment': 'system-leaf'
       }
@@ -204,7 +244,11 @@
   'security-bud':
     'patterns': [
       {
+<<<<<<< HEAD
         'match': '\\s(security|user|snmp|ssh|console|ftp)\\s'
+=======
+        'match': '\\b(security|user|snmp|ssh|console|ftp)\\s'
+>>>>>>> 314298b037f18615e7c501b6960fa7fb80d71492
         'name': 'keyword.numeric.sros'
         'comment': 'security-bud'
       }
@@ -212,7 +256,11 @@
   'security-leaf':
     'patterns': [
       {
+<<<<<<< HEAD
         'match': '\\s(ftp-server||console ftp|both|v3)\\s'
+=======
+        'match': '\\b(ftp-server||console ftp|both|v3)\\s'
+>>>>>>> 314298b037f18615e7c501b6960fa7fb80d71492
         'name':  'storage.type.function.sros'
         'comment': 'security-leaf'
       }
@@ -220,7 +268,11 @@
   'port-bud':
     'patterns': [
       {
+<<<<<<< HEAD
         'match': '\\s(port|ethernet|lldp)\\s'
+=======
+        'match': '(port|ethernet|lldp)\\s'
+>>>>>>> 314298b037f18615e7c501b6960fa7fb80d71492
         'name': 'keyword.numeric.sros'
         'comment': 'port-bud'
       }
@@ -228,6 +280,7 @@
   'port-leaf':
     'patterns': [
       {
+<<<<<<< HEAD
         'match': '\\s(network|dot1q|nearest-bridge|tx-rx|sys-cap|system|port-desc|sys-name|sys-desc|sys-cap|asynchronous|cem|hybrid|null|access|network)\\s'
         'name':  'storage.type.function.sros'
         'comment': 'port-leaf'
@@ -237,6 +290,9 @@
     'patterns': [
       {
         'match': '\\b(\\d{0,2})\/.*\\b'
+=======
+        'match': '\\b(network|dot1q|nearest-bridge|tx-rx|sys-cap|system|port-desc|sys-name|sys-desc|sys-cap|asynchronous|cem|hybrid|null|access|network)\\s'
+>>>>>>> 314298b037f18615e7c501b6960fa7fb80d71492
         'name':  'storage.type.function.sros'
         'comment': 'port-leaf'
       }
@@ -245,7 +301,11 @@
   'log-bud':
     'patterns': [
       {
+<<<<<<< HEAD
         'match': '\\b(snmp-trap-group|log-id)\\s'
+=======
+        'match': '(snmp-trap-group|log-id)\\s'
+>>>>>>> 314298b037f18615e7c501b6960fa7fb80d71492
         'name': 'keyword.numeric.sros'
         'comment': 'log-bud'
       }
@@ -253,7 +313,11 @@
   'log-leaf':
     'patterns': [
       {
+<<<<<<< HEAD
         'match': '\\s(main security)\\s'
+=======
+        'match': '\\b(main security)\\s'
+>>>>>>> 314298b037f18615e7c501b6960fa7fb80d71492
         'name':  'storage.type.function.sros'
         'comment': 'log-leaf'
       }
@@ -263,7 +327,11 @@
   'qos-bud':
     'patterns': [
       {
+<<<<<<< HEAD
         'match': '\\s(sap-ingress|sap-egress|mc-mlppp|fc)\\s'
+=======
+        'match': '(sap-ingress|sap-egress|mc-mlppp|fc)\\s'
+>>>>>>> 314298b037f18615e7c501b6960fa7fb80d71492
         'name':  'keyword.numeric.sros'
         'comment': 'qos'
       }
@@ -296,7 +364,11 @@
   'card-leaf':
     'patterns': [
       {
+<<<<<<< HEAD
         'match': '\\b(card-type(.*)|mda-type(.*))\\s'
+=======
+        'match': '\\b(iom-sar|a8-1gb-v3-sfp|a12-sdi|a8-ethv2)\\s'
+>>>>>>> 314298b037f18615e7c501b6960fa7fb80d71492
         'name':  'storage.type.function.sros'
         'comment': 'card-leaf'
       }
@@ -304,7 +376,11 @@
   'white-color':
     'patterns': [
       {
+<<<<<<< HEAD
         'match': '\\b(channel-group|ipv6|to snmp|tx-mgmt-address|spoke-sdp)\\s'
+=======
+        'match': '(channel-group|to snmp|tx-mgmt-address|spoke-sdp)'
+>>>>>>> 314298b037f18615e7c501b6960fa7fb80d71492
         'name':  'other.sros'
         'comment': 'comment'
       }
