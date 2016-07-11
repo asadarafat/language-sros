@@ -220,7 +220,7 @@
   'port-bud':
     'patterns': [
       {
-        'match': '\\s(port|ethernet|lldp)\\s'
+        'match': '\\b(port|ethernet|lldp)\\s'
         'name': 'keyword.numeric.sros'
         'comment': 'port-bud'
       }
