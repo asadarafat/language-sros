@@ -1,0 +1,313 @@
+'scopeName': 'source.sros'
+'name': 'SROS'
+'fileTypes': ['sros']
+'patterns': [
+
+  {
+    'include': '#stanza-1'
+  }
+  {
+    'include': '#stanza-2'
+  }
+  {
+    'include': '#stanza-3'
+  }
+  {
+    'include': '#ip_address'
+  }
+  {
+    'include': '#ipv6_address'
+  }
+  {
+    'include': '#description'
+  }
+  {
+    'include': '#create'
+  }
+  {
+    'include': '#id'
+  }
+  {
+    'include': '#echo'
+  }
+  {
+    'include': '#test-tab'
+  }
+  {
+    'include': '#variable'
+  }
+  {
+    'include': '#white-color'
+  }
+
+#System Stanza
+  {
+    'include': '#system-bud'
+  }
+  {
+    'include': '#system-leaf'
+  }
+#Security Stanza
+  {
+    'include': '#security-bud'
+  }
+  {
+    'include': '#security-leaf'
+  }
+#Port Stanza
+  {
+    'include': '#port-bud'
+  }
+  {
+    'include': '#port-leaf'
+  }
+  {
+    'include': '#port-id'
+  }
+#log Stanza
+  {
+    'include': '#log-bud'
+  }
+  {
+    'include': '#log-leaf'
+  }
+#qos stanza
+  {
+    'include': '#qos-bud'
+  }
+  {
+    'include': '#qos-leaf'
+  }
+  {
+    'include': '#qos-fc'
+  }
+#card stanza
+  {
+    'include': '#card-bud'
+  }
+  {
+    'include': '#card-leaf'
+  }
+##
+##
+]
+
+'repository':
+  'test-tab':
+    'patterns': [
+      {
+        'match': '\^\s{0,10}(tab|System)\\s'
+        'name':  'storage.type.function.sros'
+        'comment': 'config stanza 1'
+      }
+    ]
+  'stanza-1':
+    'patterns': [
+      {
+        'match': '(log|level-2|filter|qos|redundancy|external-alarms|router|service)$'
+        'name':  'storage.type.function.sros'
+        'comment': 'config stanza 1'
+      }
+    ]
+  'stanza-2':
+    'patterns': [
+      {
+        'match': '\\s(thresholds|ftp-server|serial|rs232|interface|ospf|isis|bgp|group|autonomous-system|policy-options|mpls|lsp|path|ldp|rsvp|sdp|epipe|vpls|vprn|ies|cpipe|cesopsn)\\s'
+        'name': 'keyword.numeric.sros'
+        'comment': 'config stanza 2'
+      }
+    ]
+  'stanza-3':
+    'patterns': [
+      {
+        'match': '(address|)\\s'
+        'name': 'constant.language.sros'
+        'comment': 'config stanza 3'
+      }
+    ]
+  'ip_address':
+    'patterns': [
+      {
+        'match': '\\b((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(/\\d+)?\\b'
+        'name': 'storage.type.function.sros'
+      }
+    ]
+  'ipv6_address':
+    'patterns': [
+      {
+        'match': '::(/\\d+)'
+        'name': 'constant.numeric.cisco'
+      }
+      {
+        'match': '\\b((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:)))(%.+)?(/\\d+)?\\b'
+        'name': 'storage.type.function.sros'
+      }
+    ]
+  'description':
+    'patterns': [
+      {
+        'match': '".*"'
+        'name': 'string.group.sros'
+        'comment': 'config exit'
+      }
+    ]
+  'create':
+    'patterns': [
+      {
+        'match': '(create)\\s'
+        'name': 'comment.documentation.sros'
+        'comment': 'config exit'
+      }
+    ]
+  'id':
+    'patterns': [
+      {
+        'match': '\\d{1,}'
+        'name': 'storage.type.function.sros'
+        'comment': 'id'
+      }
+    ]
+  'echo':
+    'patterns': [
+      {
+        'match': '(echo)\\s'
+        'name': 'support.function.sros'
+        'comment': 'config exit'
+      }
+    ]
+
+
+  'other':
+    'patterns': [
+      {
+        'match': '()\\s'
+        'name':  'other.sros'
+        'comment': 'config stanza 1'
+      }
+    ]
+  'system-bud':
+    'patterns': [
+      {
+        'match': '\\s(name|dns|snmp|time)\\s'
+        'name': 'keyword.numeric.sros'
+        'comment': 'system-bud'
+      }
+    ]
+  'system-leaf':
+    'patterns': [
+      {
+        'match': '\\s(sntp|zone|rmon)\\s'
+        'name':  'storage.type.function.sros'
+        'comment': 'system-leaf'
+      }
+    ]
+  'security-bud':
+    'patterns': [
+      {
+        'match': '\\s(security|user|snmp|ssh|console|ftp)\\s'
+        'name': 'keyword.numeric.sros'
+        'comment': 'security-bud'
+      }
+    ]
+  'security-leaf':
+    'patterns': [
+      {
+        'match': '\\s(ftp-server||console ftp|both|v3)\\s'
+        'name':  'storage.type.function.sros'
+        'comment': 'security-leaf'
+      }
+    ]
+  'port-bud':
+    'patterns': [
+      {
+        'match': '\\s(port|ethernet|lldp)\\s'
+        'name': 'keyword.numeric.sros'
+        'comment': 'port-bud'
+      }
+    ]
+  'port-leaf':
+    'patterns': [
+      {
+        'match': '\\s(network|dot1q|nearest-bridge|tx-rx|sys-cap|system|port-desc|sys-name|sys-desc|sys-cap|asynchronous|cem|hybrid|null|access|network)\\s'
+        'name':  'storage.type.function.sros'
+        'comment': 'port-leaf'
+      }
+    ]
+  'port-id':
+    'patterns': [
+      {
+        'match': '\\b(\\d{0,2})\/.*\\b'
+        'name':  'storage.type.function.sros'
+        'comment': 'port-leaf'
+      }
+    ]
+#log stanza
+  'log-bud':
+    'patterns': [
+      {
+        'match': '\\b(snmp-trap-group|log-id)\\s'
+        'name': 'keyword.numeric.sros'
+        'comment': 'log-bud'
+      }
+    ]
+  'log-leaf':
+    'patterns': [
+      {
+        'match': '\\s(main security)\\s'
+        'name':  'storage.type.function.sros'
+        'comment': 'log-leaf'
+      }
+    ]
+
+##qos
+  'qos-bud':
+    'patterns': [
+      {
+        'match': '\\s(sap-ingress|sap-egress|mc-mlppp|fc)\\s'
+        'name':  'keyword.numeric.sros'
+        'comment': 'qos'
+      }
+    ]
+  'qos-leaf':
+    'patterns': [
+      {
+        'match': '(be|af|l2|nc|ef)\\s'
+        'name':  'storage.type.function.sros'
+        'comment': 'qos'
+      }
+    ]
+  'qos-fc':
+    'patterns': [
+      {
+        'match': '(be|af|l2|nc|ef)\\s'
+        'name':  'string.group.sros'
+        'comment': 'qos'
+      }
+    ]
+#card
+  'card-bud':
+    'patterns': [
+      {
+        'match': '(card|mda)\\s'
+        'name': 'keyword.numeric.sros'
+        'comment': 'card-bud'
+      }
+    ]
+  'card-leaf':
+    'patterns': [
+      {
+        'match': '\\b(card-type(.*)|mda-type(.*))\\s'
+        'name':  'storage.type.function.sros'
+        'comment': 'card-leaf'
+      }
+    ]
+  'white-color':
+    'patterns': [
+      {
+        'match': '\\b(channel-group|ipv6|to snmp|tx-mgmt-address|spoke-sdp)\\s'
+        'name':  'other.sros'
+        'comment': 'comment'
+      }
+    ]
+
+'scopeName': 'source.nokia-sros-config'
