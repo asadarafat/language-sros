@@ -228,7 +228,7 @@
   'port-leaf':
     'patterns': [
       {
-        'match': '\\s(network|dot1q|nearest-bridge|tx-rx|sys-cap|system|port-desc|sys-name|sys-desc|sys-cap|asynchronous|cem|hybrid|null|access|network)\\s'
+        'match': '\\b(network|dot1q|nearest-bridge|tx-rx|sys-cap|system|port-desc|sys-name|sys-desc|sys-cap|asynchronous|cem|hybrid|null|access|network)\\s'
         'name':  'storage.type.function.sros'
         'comment': 'port-leaf'
       }
@@ -296,7 +296,7 @@
   'card-leaf':
     'patterns': [
       {
-        'match': '\\b(card-type(.*)|mda-type(.*))\\s'
+        'match': '\\b(card-type.*|mda-type.*)\\s'
         'name':  'storage.type.function.sros'
         'comment': 'card-leaf'
       }
